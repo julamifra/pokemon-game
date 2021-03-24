@@ -1,0 +1,20 @@
+<div class="card text-center">
+    <div class="card-header">Language</div>
+    <div class="card-body">
+      <h5 class="card-title">Choose your language</h5>
+      <p class="card-text">Here you can choose you language by selectin in the dropdown waht you want.</p>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{languageSelected}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" (click)="selectDropDown($event)">
+          <button class="dropdown-item" >Spanish</button>
+          <button class="dropdown-item" >English</button>
+          <button class="dropdown-item" >German</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+</div>
