@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-3">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-action list-group-item-primary active">Language</li>
+      <li class="list-group-item list-group-item-action list-group-item-primary">Theming</li>
+      <li class="list-group-item list-group-item-action list-group-item-primary" >Render Type</li>
+    </ul>
+  </div>
+  <div class="col-9">
+    <div class="card text-center">
+      <div class="card-header">Language</div>
+      <div class="card-body">
+        <h5 class="card-title">Choose your language</h5>
+        <p class="card-text">Here you can choose you language by selectin in the dropdown waht you want.</p>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{languageSelected}}
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" (click)="selectDropDown($event)">
+            <button class="dropdown-item" >Spanish</button>
+            <button class="dropdown-item" >English</button>
+            <button class="dropdown-item" >German</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer text-muted">
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      </div>
+    </div>
+  </div>
+</div>
