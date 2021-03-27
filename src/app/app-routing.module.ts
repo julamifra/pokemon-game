@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BattleComponent } from './battle/battle.component';
-import { ConfigurationComponent } from './configuration/configuration.component';
+import { BattleComponent } from './views/battle/battle.component';
+import { ConfigurationComponent } from './views/configuration/configuration.component';
 
 const routes: Routes = [
   { path: '', component: ConfigurationComponent },
