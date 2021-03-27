@@ -1,10 +1,11 @@
-<div class="card text-center">
-    <div class="card-header bg-primary text-light">{{this.literals.header}}</div>
+<div class="card border-primary text-center">
+    <div class="card-header">{{this.literals.header}}</div>
+    <!-- <div class="card-header bg-primary text-light">{{this.literals.header}}</div> -->
     <div class="card-body">
       <h5 class="card-title">{{this.literals.text}}</h5>
       <p class="card-text">{{this.literals.title}}</p>
       <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn border border-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {{this.literals.button}}
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" (click)="selectDropDown($event)" >
@@ -14,7 +15,8 @@
         </div>
       </div>
     </div>
-    <div class="card-footer bg-primary text-muted">
+    <div class="card-footer text-muted">
+    <!-- <div class="card-footer bg-primary text-muted"> -->
       <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
     </div>
 </div>

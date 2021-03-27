@@ -1,13 +1,13 @@
-<div class="row">
+<div class="row mb-3">
   <div class="col-3">
-    <ul class="list-group bg-primary" *ngFor="let sect of secctions" (click)="clickList($event)">
-      <li class="list-group-item list-group-item-action list-group-item-primary" id="{{sect[0]}}">{{sect[1]}}</li>
+    <ul class="list-group bg-primary" *ngFor="let sect of secctions" >
+      <li class="list-group-item list-group-item-action list-group-item-primary" id="{{sect[0]}}" (click)="clickList($event.target.id)">{{sect[1]}}</li>
     </ul>
     <div class="center">
-      <button type="button" class="btn btn-outline-primary" id="start-game-button" disabled>Start Game</button>
+      <button type="button" class="btn btn-primary disabled cursor-not-allowed" id="start-game-button" disabled (click)="startGameClick($event)">Start Game</button>
     </div>
   </div>
   <div class="col-9">
-    <config-card [literals]="literals" [elements]="elementsDropDown" (selectedElementEvent)="dropDownEvent($event)"></config-card>
+    <config-card [literals]="literals" [elements]="elementsDropDown" (selectedElementEvent)="eventGetElementDropDown($event)"></config-card>
   </div>
 </div>

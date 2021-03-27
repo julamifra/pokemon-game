@@ -6,9 +6,9 @@ export interface ILiteralsCardConfig {
 }
 
 export enum Secctions {
-    language = "Languages",
-    theming = "Theming",
-    rendertype = "RenderType"
+    Languages = "Languages",
+    Theming = "Theming",
+    RenderType = "RenderType"
 }
 
 export enum Languages {

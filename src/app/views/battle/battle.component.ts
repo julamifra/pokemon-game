@@ -10,6 +10,7 @@ export class BattleComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
