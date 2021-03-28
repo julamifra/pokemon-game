@@ -1,11 +1,7 @@
-// import { Secctions } from "src/app/views/configuration/configuration.interface";
 
 export class Configuration {
 
     private config;
-    // language: Secctions.Languages;
-    // theming: Secctions.Theming;
-    // renderType: Secctions.RenderType;
 
     constructor(){
         this.config = {};

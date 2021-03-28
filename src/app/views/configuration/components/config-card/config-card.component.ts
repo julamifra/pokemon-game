@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { ILiteralsCardConfig } from '../../configuration.interface';
+import { ILiteralsCardConfig } from '../../../../shared/interfaces/configuration.interface';
 
 @Component({
   selector: 'config-card',
@@ -20,8 +20,7 @@ export class ConfigCardComponent implements OnInit {
   constructor() { }
 
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   selectDropDown(event: Event){
     const elm = (event.target as HTMLElement).innerText;

@@ -1,8 +1,10 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HeaderService } from 'src/app/components/header/header.service';
 import { Configuration } from 'src/app/shared/classes/Configuration';
-import { ILiteralsCardConfig, Secctions } from './configuration.interface';
-import { Languages, RenderType, Theming } from "./configuration.interface"
+import { HeaderSecctions } from 'src/app/shared/interfaces/header.interface';
+import { ILiteralsCardConfig, Secctions } from '../../shared/interfaces/configuration.interface';
+import { Languages, RenderType, Theming } from "../../shared/interfaces/configuration.interface"
 const config = new Configuration();
 
 @Component({
@@ -22,9 +24,11 @@ export class ConfigurationComponent implements OnInit {
   secctions: string[][] = Object.entries(Secctions);
   secctionSelected: Secctions = Secctions.Languages;
 
-  dataSaved = {};
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router, 
+    private headerService: HeaderService
+    ) { }
 
   ngOnInit(): void {
     this.addLiteralsCard({
@@ -36,8 +40,7 @@ export class ConfigurationComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    document.getElementById(this.secctions.find(el=> el[1] === Secctions.Languages)[0]).classList.add('active');
-    this.initVrbles();
+    this.initSecctionsState();
 
   }
 
@@ -51,17 +54,14 @@ export class ConfigurationComponent implements OnInit {
     }
   }
 
-  initVrbles(){
-
-    if(config.get(Secctions.Languages)){
-      this.addSuccessById(Secctions.Languages);
-    }
-    if(config.get(Secctions.Theming)){
-      this.addSuccessById(Secctions.Theming);
-    }
-    if(config.get(Secctions.RenderType)){
-      this.addSuccessById(Secctions.RenderType);
-    }
+  /**
+   * @description add class to three secctions elements
+   */
+  initSecctionsState(){
+    document.getElementById(Secctions.Languages).classList.add('active');
+    Object.keys(Secctions).forEach(el=> {
+      if(config.get(Secctions[el])) this.addSuccessById(Secctions[el]);
+    })
   }
 
   //////////////////////
@@ -122,6 +122,7 @@ export class ConfigurationComponent implements OnInit {
 
   startGameClick(event: Event) {
      this.router.navigate(['/battle']);
+     this.headerService.activateHeaderSecction(HeaderSecctions.battle)
   }
 
 
@@ -130,7 +131,7 @@ export class ConfigurationComponent implements OnInit {
   /////////////////////////////
 
   removeAllActives(){
-    this.secctions.forEach(el => document.getElementById(el[0]).classList.remove('active'))
+    Object.keys(Secctions).forEach(el => document.getElementById(el).classList.remove('active'))
   }
 
   addActiveById(elemId: string){
