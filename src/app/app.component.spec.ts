@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'pokemon-game'`, () => {
+  it(`should have as title 'pokemon-app-battle'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('pokemon-game');
+    expect(app.title).toEqual('pokemon-app-battle');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('pokemon-game app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('pokemon-app-battle app is running!');
   });
 });

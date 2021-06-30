@@ -12,7 +12,7 @@ export class AppComponent {
     // private router: Router
   ){}
 
-  title = 'pokemon-game';
+  title = 'pokemon-app-battle';
 
   ngOnInit(): void {
     // this.router.navigate(['/configuration'])
